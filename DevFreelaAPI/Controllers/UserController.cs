@@ -4,8 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevFreelaAPI.Controllers
 {
     [Route("api/users")]
-    public class UserController: Controller
+    public class UserController: ControllerBase
     {
+        public UserController(ExampleClass exampleClass)
+        {
+
+        }
+
         // api/users/1
         [HttpGet("{id}")]
         public IActionResult GetById(int id)

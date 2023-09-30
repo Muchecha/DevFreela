@@ -1,11 +1,19 @@
 ﻿using DevFreelaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace DevFreelaAPI.Controllers
 {
     [Route("api/projects")]
     public class ProjectsController: Controller
     {
+        private readonly OpeningTimeOption _option;
+        public ProjectsController(IOptions<OpeningTimeOption> option, ExampleClass exampleClass)
+        {
+            exampleClass.Name = "Update at ProjectsController";
+            _option = option.Value;
+        }
+
         // api/projects?query=net core
         [HttpGet]
         public IActionResult Get(string query)
