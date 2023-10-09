@@ -6,7 +6,7 @@ using DevFreela.Infrastructure.Persistence;
 
 namespace DevFreela.Application.Services.Implementations
 {
-    public class ProjectService: IprojectService
+    public class ProjectService: IProjectService
     {
         private readonly DevFreelaDbContext _dbContext;
         public ProjectService(DevFreelaDbContext dbContext)
@@ -16,6 +16,7 @@ namespace DevFreela.Application.Services.Implementations
         public int Create(NewProjectInputModel inputModel)
         {
             var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
+            
             _dbContext.Projects.Add(project);
 
             return project.Id;
@@ -24,6 +25,7 @@ namespace DevFreela.Application.Services.Implementations
         public void CreateComment(CreatCommentInputModel inputModel)
         {
             var comment = new ProjectComment(inputModel.Content, inputModel.IdProject, inputModel.IdUser);
+            
             _dbContext.ProjectComments.Add(comment);
         }
 
