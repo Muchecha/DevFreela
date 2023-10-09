@@ -1,8 +1,8 @@
-﻿using DevFreelaAPI.Models;
+﻿using DevFreela.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace DevFreelaAPI.Controllers
+namespace DevFreela.API.Controllers
 {
     [Route("api/projects")]
     public class ProjectsController: Controller

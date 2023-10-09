@@ -1,4 +1,4 @@
-using DevFreelaAPI.Models;
+using DevFreela.API.Models;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,7 +1,7 @@
-﻿using DevFreelaAPI.Models;
+﻿using DevFreela.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DevFreelaAPI.Controllers
+namespace DevFreela.API.Controllers
 {
     [Route("api/users")]
     public class UserController: ControllerBase
