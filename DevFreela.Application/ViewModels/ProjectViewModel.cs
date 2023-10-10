@@ -2,13 +2,15 @@
 {
     public class ProjectViewModel
     {
-        public ProjectViewModel(string title, DateTime creadeAt)
+        public ProjectViewModel(int id, string title, DateTime createdAt)
         {
+            Id = id;
             Title = title;
-            CreadeAt = creadeAt;
+            CreatedAt = createdAt;
         }
 
+        public int Id { get; private set; }
         public string Title { get; private set; }
-        public DateTime CreadeAt { get; private set; }
+        public DateTime CreatedAt { get; private set; }
     }
 }

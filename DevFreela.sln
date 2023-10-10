@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreelaAPI", "DevFreelaAPI\DevFreelaAPI.csproj", "{FFEC08CB-2542-4E0A-81AB-11483A4B2A91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.API", "DevFreelaAPI\DevFreela.API.csproj", "{FFEC08CB-2542-4E0A-81AB-11483A4B2A91}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{C928164C-0D91-42AC-B57D-86620764EE1F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{C0F07ACC-56EF-4E93-9192-5536D735AEA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{D324DA4B-4494-4F3C-812E-66879AA6D140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{D324DA4B-4494-4F3C-812E-66879AA6D140}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

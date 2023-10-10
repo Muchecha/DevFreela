@@ -1,4 +1,4 @@
-﻿namespace DevFreelaAPI.Models
+﻿namespace DevFreela.API.Models
 {
     public class CreateCommentModel
     {

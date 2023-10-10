@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DevFreelaAPI.Controllers
+namespace DevFreela.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
