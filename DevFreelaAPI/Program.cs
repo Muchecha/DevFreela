@@ -1,4 +1,5 @@
 using DevFreela.API.Models;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
@@ -22,6 +23,11 @@ builder.Services.AddDbContext<DevFreelaDbContext>(p => p.UseSqlServer(connection
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISkillService, SkillService>();
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblies(typeof(CreateProjectCommand).Assembly);
+});
 
 builder.Services.AddSwaggerGen(c =>
 {
