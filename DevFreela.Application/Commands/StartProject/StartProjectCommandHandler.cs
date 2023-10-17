@@ -22,16 +22,16 @@ namespace DevFreela.Application.Commands.StartProject
 
             project.Start();
 
-            //_dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
-            using(var sqlConnection = new SqlConnection(_connectionString))
-            {
-                sqlConnection.Open();
+            //using(var sqlConnection = new SqlConnection(_connectionString))
+            //{
+            //    sqlConnection.Open();
 
-                var scrip = "UPDATE Projects SET Status = @status, StartedAt = @startedAt WHERE Id = @id";
+            //    var scrip = "UPDATE Projects SET Status = @status, StartedAt = @startedAt WHERE Id = @id";
 
-                await sqlConnection.ExecuteAsync(scrip, new { status = project.Status, startedat = project.StartedAt, id });
-            }
+            //    await sqlConnection.ExecuteAsync(scrip, new { status = project.Status, startedat = project.StartedAt, project.Id });
+            //}
 
             return Unit.Value;
         }
