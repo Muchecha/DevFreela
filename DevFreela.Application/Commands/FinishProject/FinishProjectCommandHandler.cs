@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using DevFreela.Infrastructure.Persistence;
+﻿using DevFreela.Infrastructure.Persistence;
 using MediatR;
 
 namespace DevFreela.Application.Commands.FinishProject

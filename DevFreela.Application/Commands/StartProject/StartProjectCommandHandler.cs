@@ -1,8 +1,8 @@
-﻿using Azure.Core;
-using Dapper;
+﻿using Dapper;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace DevFreela.Application.Commands.StartProject
@@ -18,20 +18,19 @@ namespace DevFreela.Application.Commands.StartProject
         }
         public async Task<Unit> Handle(StartProjectCommand request, CancellationToken cancellationToken)
         {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == request.Id);
+            var project = await _dbContext.Projects.SingleOrDefaultAsync(p => p.Id == request.Id);
 
             project.Start();
+            // _dbContext.SaveChanges();
 
-            await _dbContext.SaveChangesAsync();
+            using(var sqlConnection = new SqlConnection(_connectionString))
+            {
+                sqlConnection.Open();
 
-            //using(var sqlConnection = new SqlConnection(_connectionString))
-            //{
-            //    sqlConnection.Open();
+                var script = "UPDATE Projects SET Status = @status, StartedAt = @startedat WHERE Id = @id";
 
-            //    var scrip = "UPDATE Projects SET Status = @status, StartedAt = @startedAt WHERE Id = @id";
-
-            //    await sqlConnection.ExecuteAsync(scrip, new { status = project.Status, startedat = project.StartedAt, project.Id });
-            //}
+                sqlConnection.Execute(script, new { status = project.Status, startedat = project.StartedAt, request.Id });
+            }
 
             return Unit.Value;
         }
