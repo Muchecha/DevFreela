@@ -2,11 +2,11 @@
 {
     public class User: BaseEntity
     {
-        public User(string fullName, string email, DateTime bithDate)
+        public User(string fullName, string email, DateTime birthDate)
         {
             FullName = fullName;
             Email = email;
-            BithDate = bithDate;
+            BirthDate = birthDate;
             CreatedAt = DateTime.Now;
             Active = true;
 
@@ -17,11 +17,13 @@
 
         public string FullName { get; private set; }
         public string Email { get; private set; }
-        public DateTime BithDate { get; private set; }
+        public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public bool Active { get; set; }
-        public List<UserSkill> Skills { get; set; }
+
+        public List<UserSkill> Skills { get; private set; }
         public List<Project> OwnedProjects { get; private set; }
-        public List<Project> FreelanceProjects { get; private set; }
+        public List<Project> FreelanceProjects { get; set; }
+        public List<ProjectComment> Comments { get; private set; }
     }
 }

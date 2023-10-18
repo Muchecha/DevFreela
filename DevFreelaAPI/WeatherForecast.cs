@@ -1,4 +1,4 @@
-namespace DevFreelaAPI
+namespace DevFreela.API
 {
     public class WeatherForecast
     {
