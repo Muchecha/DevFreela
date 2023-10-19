@@ -6,13 +6,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace DevFreela.Infrastructure.Persistence.Repositories
 {
-    public class SkillRepository : ISkillRepository
+    public class SkillRepository: ISkillRepository
     {
         private readonly string _connectionString;
         public SkillRepository(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("DevFreelaCs");
         }
+
         public async Task<List<SkillDTO>> GetAllAsync()
         {
             using(var sqlConnection = new SqlConnection(_connectionString))
@@ -28,8 +29,11 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 
             // COM EF CORE
             //var skills = _dbContext.Skills;
+
             //var skillsViewModel = skills
-            //    .Select(s => new SkillViewModel(s.Id, s.Description)).ToList();
+            //    .Select(s => new SkillViewModel(s.Id, s.Description))
+            //    .ToList();
+
             //return skillsViewModel;
         }
     }
