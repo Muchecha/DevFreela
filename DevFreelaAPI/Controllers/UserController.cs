@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevFreela.API.Controllers
 {
     [Route("api/users")]
-    public class UserController: ControllerBase
+    public class UsersController: ControllerBase
     {
         private readonly IMediator _mediator;
-        public UserController(IMediator mediator)
+        public UsersController(IMediator mediator)
         {
             _mediator = mediator;
         }

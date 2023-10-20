@@ -69,14 +69,14 @@ namespace DevFreela.API.Controllers
                 return BadRequest();
             }
 
-           await _mediator.Send(command);
+            await _mediator.Send(command);
 
             return NoContent();
         }
 
         // api/projects/3 DELETE
         [HttpDelete("{id}")]
-        public async Task< IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteProjectCommand(id);
 
