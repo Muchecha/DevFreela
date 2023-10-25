@@ -3,7 +3,7 @@ using MediatR;
 
 namespace DevFreela.Application.Commands.FinishProject
 {
-    public class FinishProjectCommandHandler : IRequestHandler<FinishProjectCommand, Unit>
+    public class FinishProjectCommandHandler: IRequestHandler<FinishProjectCommand, Unit>
     {
         private readonly IProjectRepository _projectRepository;
         public FinishProjectCommandHandler(IProjectRepository projectRepository)
